@@ -1,9 +1,11 @@
 /*!
- * jQuery Cookie Plugin v1.4.0
+ * Needham Software LLC version of jQuery Cookie Plugin v1.4.0
  * https://github.com/carhartl/jquery-cookie
  *
- * Copyright 2013 Klaus Hartl
- * Released under the MIT license
+ * Most code below is Copyright 2013 Klaus Hartl
+ * Human readable time parsing Copyright 2014 Needham Software LLC
+ *
+ * Released under the MIT license as per acompanying MIT-LICENSE.txt file
  */
 (function (factory) {
 	if (typeof define === 'function' && define.amd) {
@@ -63,6 +65,7 @@
 				var days = options.expires, t = options.expires = new Date();
 				t.setTime(+t + days * 864e+5);
 			} else if (typeof options.expires === 'string') {
+				// parse out human readable times
 				regexp = /(\d+)(sec|min|h|d)?/;
 				var parsed = regexp.exec(options.expires);
 				if (parsed) {
