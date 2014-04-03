@@ -30,10 +30,27 @@ Create session cookie:
 $.cookie('the_cookie', 'the_value');
 ```
 
-Create expiring cookie, 7 days from then:
+Create expiring cookie, 7 days from now:
 
 ```javascript
 $.cookie('the_cookie', 'the_value', { expires: 7 });
+```
+or
+
+```javascript
+$.cookie('the_cookie', 'the_value', { expires: '7d' });
+```
+
+Create expiring cookie, 8 hours from now:
+
+```javascript
+$.cookie('the_cookie', 'the_value', { expires: '8h' });
+```
+
+Create expiring cookie, 30 min from now:
+
+```javascript
+$.cookie('the_cookie', 'the_value', { expires: '30min' });
 ```
 
 Create expiring cookie, valid across entire site:

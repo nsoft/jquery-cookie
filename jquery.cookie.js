@@ -62,6 +62,26 @@
 			if (typeof options.expires === 'number') {
 				var days = options.expires, t = options.expires = new Date();
 				t.setTime(+t + days * 864e+5);
+			} else if (typeof options.expires === 'string') {
+				regexp = /(\d+)(sec|min|h|d)?/;
+				var parsed = regexp.exec(options.expires);
+				if (parsed) {
+					parsed[2] = parsed[2] ? parsed[2] : 'd';
+					t = options.expires = new Date();
+					switch (parsed[2]) {
+						case 'sec':
+							t.setTime(+t + parsed[1] * 1000);
+							break;
+						case 'min':
+							t.setTime(+t + parsed[1] * 1000 * 60);
+							break;
+						case   "h":
+							t.setTime(+t + parsed[1] * 1000 * 60 * 60);
+							break;
+						case   "d":
+							t.setTime(+t + parsed[1] * 1000 * 60 * 60 * 24);
+					}
+				}
 			}
 
 			return (document.cookie = [
