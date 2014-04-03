@@ -1,6 +1,6 @@
 /*!
  * Needham Software LLC version of jQuery Cookie Plugin v1.4.0
- * https://github.com/carhartl/jquery-cookie
+ * https://github.com/nsoft/jquery-cookie
  *
  * Most code below is Copyright 2013 Klaus Hartl
  * Human readable time parsing Copyright 2014 Needham Software LLC
